@@ -43,6 +43,9 @@ function git_sparse_clone() {
 addFeeds custom https://github.com/kenzok8/openwrt-packages.git
 addFeeds small https://github.com/kenzok8/small.git
 
+src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main
+src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main
+
 # 支持 turboacc
 # 不带 shortcut-fe
 curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
@@ -123,6 +126,11 @@ git_sparse_clone main https://github.com/kenzok8/small-package dns2socks ipt2soc
 
 # 
 ./scripts/feeds update -a
+
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,xray*,v2ray*,v2ray*,sing*,smartdns}
+rm -rf feeds/packages/utils/v2dat
+
 # remove 
 ls -lh feeds/small/
 rm -rf feeds/small/{luci-app-bypass,luci-app-ssr-plus}
