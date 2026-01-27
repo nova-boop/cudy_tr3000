@@ -43,6 +43,10 @@ function git_sparse_clone() {
 
 addFeeds passwall_packages "https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main"
 addFeeds passwall_luci "https://github.com/Openwrt-Passwall/openwrt-passwall.git;main"
+ # 移除 openwrt feeds 自带的核心库
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+# 移除 openwrt feeds 过时的luci版本
+rm -rf feeds/luci/applications/luci-app-passwall
 
 addFeeds custom https://github.com/kenzok8/openwrt-packages.git
 addFeeds small https://github.com/kenzok8/small.git
