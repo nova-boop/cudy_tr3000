@@ -171,6 +171,23 @@ jobs:
         ls -lh
         du -h $OPENWRT_PATH/files
         tree -ifh $OPENWRT_PATH/files
+
+    - name: Download sing-box
+      run: |
+        cd $OPENWRT_PATH
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+        curl -LO https://github.com/SagerNet/sing-box/releases/download/v$LATEST_VERSION/sing-box-$LATEST_VERSION-linux-arm64.tar.gz
+        mkdir sing_box_temp
+        tar -zxvf sing-box-$LATEST_VERSION-linux-arm64.tar.gz
+        
+        # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
+        upx -3 sing-box-$LATEST_VERSION-linux-arm64/sing-box
+
+        mkdir -p $OPENWRT_PATH/files/usr/bin
+        mv sing-box-$LATEST_VERSION-linux-arm64/sing-box $OPENWRT_PATH/files/usr/bin/
+        ls -lh
+        du -h $OPENWRT_PATH/files
+        tree -ifh $OPENWRT_PATH/files
         
     # - name: Download AdGuardHome
     #   run: |
