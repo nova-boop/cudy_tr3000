@@ -122,8 +122,8 @@ jobs:
         cd $OPENWRT_PATH
         
         # change golang version
-        echo "ls -lh golang"
-        ls -lh feeds/packages/lang/golang
+        # echo "ls -lh golang"
+        # ls -lh feeds/packages/lang/golang
         
         rm -rf feeds/packages/lang/golang
         echo "ls -lg rm -rf golang"
