@@ -196,13 +196,13 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
-    - name: Fix patch
+    - name: Check hack patch
       run: |
         cd $OPENWRT_PATH
         echo -e "\n\n\n"
         ls target/linux/generic/hack-6.12/
         echo -e "\n\n\n"
-        rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
+        # rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
         
     - name: Compile Firmware
       id: compile

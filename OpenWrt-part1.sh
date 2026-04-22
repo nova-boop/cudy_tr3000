@@ -42,15 +42,6 @@ sed -i '1i\
 src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main\
 src-git passwall_luci https://github.com/Openwrt-Passwall/openwrt-passwall.git;main' feeds.conf.default
 
-
-# 支持 turboacc
-# 不带 shortcut-fe
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
-# 带  不带 shortcut-fe
-# curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
-# shortcut-fe
-git_sparse_clone package https://github.com/chenmozhijin/turboacc shortcut-fe
-
 # 关机
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
