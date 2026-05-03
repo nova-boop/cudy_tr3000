@@ -49,7 +49,7 @@ curl -sSL https://raw.githubusercontent.com/mufeng05/turboacc/main/add_turboacc.
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
 # 应用过滤
-git clone -b v6.1.3  https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone -b v6.1.8  https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 
 # 钉钉推送
 git clone --depth=1 https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
