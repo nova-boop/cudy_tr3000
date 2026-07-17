@@ -148,7 +148,7 @@ jobs:
     #     unzip Xray-linux-arm64-v8a.zip -d Xray-linux-arm64-v8a
     #     rm Xray-linux-arm64-v8a.zip
     #     # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
-    #     upx -3 Xray-linux-arm64-v8a/xray
+    #     upx -6 Xray-linux-arm64-v8a/xray
 
     #     mkdir -p $OPENWRT_PATH/files/usr/bin
     #     mv Xray-linux-arm64-v8a/xray $OPENWRT_PATH/files/usr/bin/
@@ -165,7 +165,7 @@ jobs:
         tar -zxvf sing-box-$LATEST_VERSION-linux-arm64-musl.tar.gz
         
         # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
-        upx -3 sing-box-$LATEST_VERSION-linux-arm64-musl/sing-box
+        upx -6 sing-box-$LATEST_VERSION-linux-arm64-musl/sing-box
 
         mkdir -p $OPENWRT_PATH/files/usr/bin
         mv sing-box-$LATEST_VERSION-linux-arm64-musl/sing-box $OPENWRT_PATH/files/usr/bin/
@@ -182,7 +182,7 @@ jobs:
     #     mv AdGuardHome AdGuardHome_temp
     #     ls -lh  AdGuardHome_temp
     #      # -0：无损 -2：标准 -3: 较高 -9:最高 --best：最佳
-    #     upx -3 AdGuardHome_temp/AdGuardHome
+    #     upx -6 AdGuardHome_temp/AdGuardHome
     #     ls -lh  AdGuardHome_temp
     #     mv AdGuardHome_temp/AdGuardHome $OPENWRT_PATH/files/usr/bin/
     #     ls -lh 
