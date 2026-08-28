@@ -70,7 +70,7 @@ git clone --depth=1 https://github.com/gSpotx2f/luci-app-temp-status package/luc
 # git_sparse_clone master https://github.com/haiibo/openwrt-packages luci-app-wrtbwmon wrtbwmon luci-app-onliner
 
 # usb打印+网络唤醒Plus
-git_sparse_clone main https://github.com/VIKINGYFY/packages luci-app-wolplus
+git_sparse_clone master https://github.com/sundaqiang/openwrt-packages luci-app-wolplus
 # git clone --depth=1 https://github.com/Dboykey/luci-app-usb-printer package/luci-app-usb-printer
 
 # kms
