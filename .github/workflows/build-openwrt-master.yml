@@ -210,6 +210,8 @@ jobs:
 
         rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
 
+        rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
+        
         ls -l target/linux/generic/hack-6.12/
         # echo -e "print {scons} \n "
         # grep -r "scons" feeds/ package/ --include="Makefile" || true
