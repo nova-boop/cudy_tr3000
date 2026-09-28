@@ -162,7 +162,13 @@ jobs:
     - name: Download sing-box
       run: |
         cd $OPENWRT_PATH
-        LATEST_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+
+        # latest
+        # LATEST_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+
+        # pre-releases
+        LATEST_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases | jq -r '[.[] | select(.prerelease == true) | select(.tag_name | test("alpha|pre|beta"; "i"))] | sort_by(.created_at) | last | .tag_name' | sed -E 's/^v//')
+
         curl -LO https://github.com/SagerNet/sing-box/releases/download/v$LATEST_VERSION/sing-box-$LATEST_VERSION-linux-arm64-musl.tar.gz
         mkdir sing_box_temp
         tar -zxvf sing-box-$LATEST_VERSION-linux-arm64-musl.tar.gz
