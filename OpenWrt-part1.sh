@@ -48,6 +48,12 @@ curl -sSL https://raw.githubusercontent.com/mufeng05/turboacc/main/add_turboacc.
 # 关机
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 
+# 定时限速
+git clone --depth=1 https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+
+# NFT版上网时间控制插件
+git_sparse_clone main https://github.com/sirpdboy/luci-app-timecontrol luci-app-timecontrol
+
 # 应用过滤
 git clone -b v6.1.8  https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 
