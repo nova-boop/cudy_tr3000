@@ -220,6 +220,7 @@ jobs:
         
         # rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
         
+        rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
         ls -l target/linux/generic/hack-6.12/
         # echo -e "print {scons} \n "
         # grep -r "scons" feeds/ package/ --include="Makefile" || true
