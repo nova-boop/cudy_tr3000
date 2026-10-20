@@ -210,24 +210,14 @@ jobs:
       run: |
         cd $OPENWRT_PATH
         echo -e "\n\n\n"
-        ls -l target/linux/generic/hack-6.12/
+        ls -l target/linux/generic/hack-6.18/
         echo -e "\n\n\n"
         # rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
-
         # rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
-        
-        # rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
-        
         # rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
         
         rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
-        ls -l target/linux/generic/hack-6.12/
-        # echo -e "print {scons} \n "
-        # grep -r "scons" feeds/ package/ --include="Makefile" || true
-
-        # echo -e "rm  feeds/packages/devel/scons/patches/001-platform_env.patch"
-        # rm -f feeds/packages/devel/scons/patches/001-platform_env.patch
-        # echo -e "rm scons ok"
+        ls -l target/linux/generic/hack-6.18/
         
     - name: Compile Firmware
       id: compile
