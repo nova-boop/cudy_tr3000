@@ -214,11 +214,11 @@ jobs:
         echo -e "\n\n\n"
         # rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
 
-        rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
+        # rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
         
-        rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
+        # rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
         
-        rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
+        # rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
         
         ls -l target/linux/generic/hack-6.12/
         # echo -e "print {scons} \n "
