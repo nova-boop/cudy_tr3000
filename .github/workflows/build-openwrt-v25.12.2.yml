@@ -1,9 +1,9 @@
-name: CUDY_TR3000_V1_114M_IM_MASTER
+name: CUDY_TR3000_V1_114M_IM_V25.12.2
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 19 * * *
+  # schedule:
+    # - cron: 0 19 * * *
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
