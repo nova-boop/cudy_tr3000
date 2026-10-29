@@ -218,6 +218,8 @@ jobs:
         
         rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
         ls -l target/linux/generic/hack-6.18/
+
+        make package/libs/libnftnl/prepare && python3 -c 'import pathlib,re; p=next(pathlib.Path("build_dir").glob("target-*/libnftnl-*/src/expr/fullcone.c")); s=p.read_text(); s,n=re.subn(r"(nftnl_expr_fullcone_set\s*\([^)]*?uint32_t\s+\w+)\s*\)",r"\1, uint32_t flags)",s,count=1,flags=re.S); assert n==1,"没有匹配到回调定义"; p.write_text(s)'
         
     - name: Compile Firmware
       id: compile
