@@ -206,20 +206,19 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+        
+
     - name: Check hack patch
       run: |
         cd $OPENWRT_PATH
-        echo -e "\n\n\n"
-        ls -l target/linux/generic/hack-6.18/
+
+        # CONFIG_PACKAGE_fullconenat-sonic=y
+        curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
+        
         echo -e "\n\n\n"
         # rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
         # rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
         # rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
-        
-        rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
-        ls -l target/linux/generic/hack-6.18/
-
-        make package/libs/libnftnl/prepare && python3 -c 'import pathlib,re; p=next(pathlib.Path("build_dir").glob("target-*/libnftnl-*/src/expr/fullcone.c")); s=p.read_text(); s,n=re.subn(r"(nftnl_expr_fullcone_set\s*\([^)]*?uint32_t\s+\w+)\s*\)",r"\1, uint32_t flags)",s,count=1,flags=re.S); assert n==1,"没有匹配到回调定义"; p.write_text(s)'
         
     - name: Compile Firmware
       id: compile
