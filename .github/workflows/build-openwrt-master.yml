@@ -213,13 +213,13 @@ jobs:
         cd $OPENWRT_PATH
 
         # CONFIG_PACKAGE_fullconenat-sonic=y
-        curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
+        # curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
         
         echo -e "\n\n\n"
         # rm -rf target/linux/generic/hack-6.12/952-add-net-conntrack-events-support-multiple-registrant.patch
         # rm -rf target/linux/generic/hack-6.12/953-net-patch-linux-kernel-to-support-shortcut-fe.patch
         # rm -rf package/network/utils/nftables/patches/100-nftables-add-fullcone-expression-support.patch
-        rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
+        # rm -rf target/linux/generic/hack-6.18/952-net-conntrack-events-support-multiple-registrant.patch
         ls -l target/linux/generic/hack-6.18/
         
     - name: Compile Firmware
