@@ -209,7 +209,7 @@ jobs:
     - name: Add Sonic Fullcone
       run: |
         cd $OPENWRT_PATH
-        # curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
+        curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
 
     - name: Check hack patch
       run: |
