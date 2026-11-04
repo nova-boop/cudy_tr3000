@@ -206,9 +206,11 @@ jobs:
           find dl -size -1024c -exec ls -l {} \;
           find dl -size -1024c -exec rm -f {} \;
 
-      - name: Add Sonic Fullcone
+      - name: Clear old firewall4 patches and apply SONiC FullCone
         run: |
           cd $OPENWRT_PATH
+          rm -f package/network/config/firewall4/patches/001-firewall4-add-support-for-fullcone-nat.patch
+          make package/network/config/firewall4/clean
           curl -sSL https://raw.githubusercontent.com/mufeng05/openwrt-sonic-fullcone/master/add_sonic_fullcone.sh | bash
 
       - name: Check hack patch
